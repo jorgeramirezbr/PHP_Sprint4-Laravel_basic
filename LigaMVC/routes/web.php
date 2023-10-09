@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EquipoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::middleware([
@@ -23,43 +24,26 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('index');
+        return view('dashboard');
     })->name('dashboard'); 
 });
 
-Route::get('/equipos/index', function () {
-    return view('equipos/index');
-});
+Route::get('/equipos/index', [EquipoController::class, 'index']);
 
-Route::get('/equipos/crear', function () {
-    return view('equipos/crear');
-});
+Route::get('/equipos/crear', [EquipoController::class, 'create']);
 
-Route::get('/equipos/mostrar', function () {
-    return view('equipos/mostrar');
-});
-Route::get('/equipos/editar', function () {
-    return view('equipos/editar');
-});
-Route::get('/equipos/eliminar', function () {
-    return view('equipos/eliminar');
-});
+Route::get('/equipos/mostrar/{id}', [EquipoController::class, 'show']);
 
-Route::get('/partidos/index', function () {
-    return view('partidos/index');
-});
+Route::get('/equipos/editar', [EquipoController::class, 'edit']);
 
-Route::get('/partidos/crear', function () {
-    return view('partidos/crear');
-});
-Route::get('/partidos/mostrar', function () {
-    return view('partidos/mostrar');
-});
+Route::get('/equipos/eliminar', [EquipoController::class, 'destroy']);
 
-Route::get('/partidos/editar', function () {
-    return view('partidos/editar');
-});
+Route::get('/partidos/index', [PartidoController::class, 'index']);
 
-Route::get('/partidos/eliminar', function () {
-    return view('partidos/eliminar');
-});
+Route::get('/partidos/crear', [PartidoController::class, 'create']);
+
+Route::get('/equipos/mostrar/{id}', [PartidoController::class, 'show']);
+
+Route::get('/partidos/editar', [PartidoController::class, 'edit']);
+
+Route::get('/partidos/eliminar', [PartidoController::class, 'destroy']);
