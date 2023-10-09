@@ -19,7 +19,7 @@ class PartidoController extends Controller
      */
     public function create()
     {
-        return view('partidos/crear');
+        return view('partidos/create');
     }
 
     /**
@@ -27,7 +27,7 @@ class PartidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('partidos/store');
     }
 
     /**
@@ -35,7 +35,7 @@ class PartidoController extends Controller
      */
     public function show(string $id)
     {
-        return view('partidos/mostrar');
+        return view('partidos/show');
     }
 
     /**
@@ -43,7 +43,7 @@ class PartidoController extends Controller
      */
     public function edit(string $id)
     {
-        return view('partidos/editar');
+        return view('partidos/edit');
     }
 
     /**
@@ -51,7 +51,7 @@ class PartidoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return view('partidos/update');
     }
 
     /**
@@ -59,6 +59,6 @@ class PartidoController extends Controller
      */
     public function destroy(string $id)
     {
-        return view('partidos/eliminar');
+        return view('partidos/destroy');
     }
 }

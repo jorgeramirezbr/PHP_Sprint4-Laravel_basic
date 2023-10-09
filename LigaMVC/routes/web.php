@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EquipoController;
+use App\Http\Controllers\PartidoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,20 +31,28 @@ Route::middleware([
 
 Route::get('/equipos/index', [EquipoController::class, 'index']);
 
-Route::get('/equipos/crear', [EquipoController::class, 'create']);
+Route::get('/equipos/create', [EquipoController::class, 'create']);
 
-Route::get('/equipos/mostrar/{id}', [EquipoController::class, 'show']);
+Route::get('/equipos/store', [EquipoController::class, 'store']);
 
-Route::get('/equipos/editar', [EquipoController::class, 'edit']);
+Route::get('/equipos/show', [EquipoController::class, 'show']);
 
-Route::get('/equipos/eliminar', [EquipoController::class, 'destroy']);
+Route::get('/equipos/edit', [EquipoController::class, 'edit']);
+
+Route::get('/equipos/update', [EquipoController::class, 'update']);
+
+Route::get('/equipos/destroy', [EquipoController::class, 'destroy']);
 
 Route::get('/partidos/index', [PartidoController::class, 'index']);
 
-Route::get('/partidos/crear', [PartidoController::class, 'create']);
+Route::get('/partidos/create', [PartidoController::class, 'create']);
 
-Route::get('/equipos/mostrar/{id}', [PartidoController::class, 'show']);
+Route::get('/partidos/store', [PartidoController::class, 'store']);
 
-Route::get('/partidos/editar', [PartidoController::class, 'edit']);
+Route::get('/partidos/show', [PartidoController::class, 'show']);
 
-Route::get('/partidos/eliminar', [PartidoController::class, 'destroy']);
+Route::get('/partidos/edit', [PartidoController::class, 'edit']);
+
+Route::get('/partidos/update', [PartidoController::class, 'update']);
+
+Route::get('/partidos/destroy', [PartidoController::class, 'destroy']);

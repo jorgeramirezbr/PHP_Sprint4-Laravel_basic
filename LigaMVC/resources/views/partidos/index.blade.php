@@ -11,16 +11,16 @@
     
     <div class="flex justify-center">
         <p class="my-8">
-            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/crear">Crear partido</a>
+            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/create">Crear partido</a>
         </p>
         <p class="my-8">
-            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/mostrar">Ver partido</a>
+            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/show">Ver partido</a>
         </p>
         <p class="my-8">
-            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/editar">Actualizar partido</a>
+            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/edit">Editar partido</a>
         </p>
         <p class="my-8">
-            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/eliminar">Borrar partido</a>
+            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/destroy">Borrar partido</a>
         </p>
     </div>
 </body>
