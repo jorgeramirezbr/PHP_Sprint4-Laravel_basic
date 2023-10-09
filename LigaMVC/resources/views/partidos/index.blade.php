@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Indice de partidos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    
+@extends('layouts.plantilla')
+
+@section('title', 'Indice partidos')
+@section('content')    
     <div class="flex justify-center">
         <p class="my-8">
             <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/create">Crear partido</a>
@@ -23,5 +16,4 @@
             <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/destroy">Borrar partido</a>
         </p>
     </div>
-</body>
-</html>
+@endsection
