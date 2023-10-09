@@ -11,7 +11,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        return view('equipos/index');
+        return view('equipos.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        return view('equipos/create');
+        return view('equipos.create');
     }
 
     /**
@@ -27,7 +27,7 @@ class EquipoController extends Controller
      */
     public function store(Request $request)
     {
-        return view('equipos/store');
+        return view('equipos.store');
     }
 
     /**
@@ -35,7 +35,7 @@ class EquipoController extends Controller
      */
     public function show(string $id)
     {
-        return view('equipos/show');
+        return view('equipos.show');
     }
 
     /**
@@ -43,7 +43,7 @@ class EquipoController extends Controller
      */
     public function edit(string $id)
     {
-        return view('equipos/edit');
+        return view('equipos.edit');
     }
 
     /**
@@ -51,7 +51,7 @@ class EquipoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return view('equipos/update');
+        return view('equipos.update');
     }
 
     /**
@@ -59,6 +59,6 @@ class EquipoController extends Controller
      */
     public function destroy(string $id)
     {
-        return view('equipos/destroy');
+        return view('equipos.destroy');
     }
 }
