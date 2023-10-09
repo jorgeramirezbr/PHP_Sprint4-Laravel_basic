@@ -29,30 +29,30 @@ Route::middleware([
     })->name('dashboard'); 
 });
 
-Route::get('/equipos/index', [EquipoController::class, 'index']);
+Route::get('equipos/index', [EquipoController::class, 'index'])->name('equipos.index');
 
-Route::get('/equipos/create', [EquipoController::class, 'create']);
+Route::get('/equipos/create', [EquipoController::class, 'create'])->name('equipos.create');
 
-Route::get('/equipos/store', [EquipoController::class, 'store']);
+Route::get('/equipos/store', [EquipoController::class, 'store'])->name('equipos.store');
 
-Route::get('/equipos/show', [EquipoController::class, 'show']);
+Route::get('/equipos/show', [EquipoController::class, 'show'])->name('equipos.show');
 
-Route::get('/equipos/edit', [EquipoController::class, 'edit']);
+Route::get('/equipos/edit', [EquipoController::class, 'edit'])->name('equipos.edit');
 
-Route::get('/equipos/update', [EquipoController::class, 'update']);
+Route::get('/equipos/update', [EquipoController::class, 'update'])->name('equipos.update');
 
-Route::get('/equipos/destroy', [EquipoController::class, 'destroy']);
+Route::get('/equipos/destroy', [EquipoController::class, 'destroy'])->name('equipos.destroy');
 
-Route::get('/partidos/index', [PartidoController::class, 'index']);
+Route::get('/partidos/index', [PartidoController::class, 'index'])->name('partidos.index');
 
-Route::get('/partidos/create', [PartidoController::class, 'create']);
+Route::get('/partidos/create', [PartidoController::class, 'create'])->name('partidos.create');
 
-Route::get('/partidos/store', [PartidoController::class, 'store']);
+Route::get('/partidos/store', [PartidoController::class, 'store'])->name('partidos.store');
 
-Route::get('/partidos/show', [PartidoController::class, 'show']);
+Route::get('/partidos/show', [PartidoController::class, 'show'])->name('partidos.show');
 
-Route::get('/partidos/edit', [PartidoController::class, 'edit']);
+Route::get('/partidos/edit', [PartidoController::class, 'edit'])->name('partidos.edit');
 
-Route::get('/partidos/update', [PartidoController::class, 'update']);
+Route::get('/partidos/update', [PartidoController::class, 'update'])->name('partidos.update');
 
-Route::get('/partidos/destroy', [PartidoController::class, 'destroy']);
+Route::get('/partidos/destroy', [PartidoController::class, 'destroy'])->name('partidos.destroy');
