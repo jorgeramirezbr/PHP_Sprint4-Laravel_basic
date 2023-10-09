@@ -1,6 +1,8 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Mostrar equipo')
+@section('title', 'Equipo '. $equipo->name)
 @section('content')
-    <h1>Mostrar equipo</h1>
+    <a href="{{route('equipos.index')}}">Volver a Equipos</a>
+    <h1>El equipo: {{$equipo->name}}</h1>
+    <p><strong>Puntos: </strong>{{$equipo->puntos}}</p>
 @endsection

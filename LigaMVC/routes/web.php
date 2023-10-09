@@ -35,7 +35,7 @@ Route::get('/equipos/create', [EquipoController::class, 'create'])->name('equipo
 
 Route::get('/equipos/store', [EquipoController::class, 'store'])->name('equipos.store');
 
-Route::get('/equipos/show', [EquipoController::class, 'show'])->name('equipos.show');
+Route::get('/equipos/show/{id}', [EquipoController::class, 'show'])->name('equipos.show');
 
 Route::get('/equipos/edit', [EquipoController::class, 'edit'])->name('equipos.edit');
 

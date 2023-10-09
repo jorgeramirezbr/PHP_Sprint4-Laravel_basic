@@ -19,7 +19,9 @@
     </div>
     <ul class="list-disc list-inside">
         @foreach ($equipos as $equipo)
-            <li>{{$equipo->name}}</li>
+            <li>
+                <a href="{{route('equipos.show', $equipo->id)}}">{{$equipo->name}}</a>
+            </li>
         @endforeach
     </ul>
     {{$equipos->links()}}
