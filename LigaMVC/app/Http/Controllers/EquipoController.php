@@ -38,26 +38,27 @@ class EquipoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Equipo $equipo)
     {
-        $equipo =Equipo::find($id);
         return view('equipos.show', compact('equipo'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Equipo $equipo)
     {
-        return view('equipos.edit');
+        return view('equipos.edit', compact('equipo'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Equipo $equipo)
     {
-        return view('equipos.update');
+        $equipo->name = $request->name;
+        $equipo->save();
+        return redirect()->route('equipos.show', $equipo);
     }
 
     /**

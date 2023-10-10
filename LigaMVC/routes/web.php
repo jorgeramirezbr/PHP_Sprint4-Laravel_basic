@@ -35,11 +35,11 @@ Route::get('equipos/create', [EquipoController::class, 'create'])->name('equipos
 
 Route::post('equipos', [EquipoController::class, 'store'])->name('equipos.store');
 
-Route::get('/equipos/show/{id}', [EquipoController::class, 'show'])->name('equipos.show');
+Route::get('equipos/{equipo}', [EquipoController::class, 'show'])->name('equipos.show');
 
-Route::get('/equipos/edit', [EquipoController::class, 'edit'])->name('equipos.edit');
+Route::get('equipos/{equipo}/edit', [EquipoController::class, 'edit'])->name('equipos.edit');
 
-Route::get('/equipos/update', [EquipoController::class, 'update'])->name('equipos.update');
+Route::put('equipos/{equipo}', [EquipoController::class, 'update'])->name('equipos.update');
 
 Route::get('/equipos/destroy', [EquipoController::class, 'destroy'])->name('equipos.destroy');
 
