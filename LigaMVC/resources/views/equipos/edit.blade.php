@@ -10,8 +10,13 @@
         @method('put')
         <label>
             Nombre:
-            <input type="text" name="name" value="{{$equipo->name}}">
+            <input type="text" name="name" value="{{old('name', $equipo->name)}}">
         </label>
+        @error('name')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
         <br>
         <button type="submit">Actualizar formulario</button>
     </form>

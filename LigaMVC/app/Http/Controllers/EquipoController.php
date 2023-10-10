@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\StoreEquipo;
+
 class EquipoController extends Controller
 {
     /**
@@ -27,8 +29,8 @@ class EquipoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
+    public function store(StoreEquipo $request)
+    {     
         /* $equipo = new Equipo();
         $equipo->name = $request->name;
         $equipo->save();
@@ -58,6 +60,9 @@ class EquipoController extends Controller
      */
     public function update(Request $request, Equipo $equipo)
     {
+        $request->validate([
+            'name' => 'required'
+        ]);
         /* $equipo->name = $request->name;
         $equipo->save(); */ 
         $equipo->update($request->all());
