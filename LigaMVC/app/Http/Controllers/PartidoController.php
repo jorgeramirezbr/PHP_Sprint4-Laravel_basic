@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partido;
 use Illuminate\Http\Request;
 
 class PartidoController extends Controller
@@ -11,7 +12,8 @@ class PartidoController extends Controller
      */
     public function index()
     {
-        return view('partidos.index');
+        $partidos = Partido::orderBy('id','desc')->paginate();
+        return view('partidos.index', compact('partidos'));
     }
 
     /**
