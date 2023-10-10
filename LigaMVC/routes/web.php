@@ -49,7 +49,7 @@ Route::get('partidos/create', [PartidoController::class, 'create'])->name('parti
 
 Route::get('partidos/store', [PartidoController::class, 'store'])->name('partidos.store');
 
-Route::get('partidos/show', [PartidoController::class, 'show'])->name('partidos.show');
+Route::get('partidos/{id}', [PartidoController::class, 'show'])->name('partidos.show');
 
 Route::get('partidos/edit', [PartidoController::class, 'edit'])->name('partidos.edit');
 

@@ -1,6 +1,11 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Mostrar partido')
+@section('title', 'Partido'. $partido->id)
 @section('content')
-    <h1>Mostrar partido</h1>
+    <h1>Partido {{$partido->id}}</h1>
+    <a href="{{route('partidos.index')}}">Volver a Partidos</a>
+    <p><strong>Equipo Local: </strong>{{ $partido->equipoLocal->name }}</p>
+    <p><strong>Goles: </strong>{{ $partido->goles_local }}</p>
+    <p><strong>Equipo Visitante: </strong>{{ $partido->equipoVisitante->name }}</p>
+    <p><strong>Goles: </strong>{{ $partido->goles_visitante }}</p>
 @endsection

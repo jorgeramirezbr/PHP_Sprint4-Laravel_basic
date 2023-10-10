@@ -11,8 +11,8 @@
         <ul class="list-disc list-inside">
             @foreach ($partidos as $partido)
                 <li>
-                    {{$partido->equipoLocal->name}}: {{ $partido->goles_local }}  VS 
-                    {{$partido->equipoVisitante->name}}: {{ $partido->goles_visitante }}
+                    <a href="{{route('partidos.show', $partido->id)}}"><strong>Partido {{$partido->id}}:</strong> {{$partido->equipoLocal->name}}: {{ $partido->goles_local }}  <strong>VS</strong> 
+                    {{$partido->equipoVisitante->name}}: {{ $partido->goles_visitante }}</a>
                 </li>
             @endforeach
         </ul>
