@@ -29,9 +29,11 @@ class EquipoController extends Controller
      */
     public function store(Request $request)
     {
-        $equipo = new Equipo();
+        /* $equipo = new Equipo();
         $equipo->name = $request->name;
         $equipo->save();
+         */
+        $equipo = Equipo::create($request->all());
         return redirect()->route('equipos.show', $equipo);
     }
 
@@ -56,8 +58,10 @@ class EquipoController extends Controller
      */
     public function update(Request $request, Equipo $equipo)
     {
-        $equipo->name = $request->name;
-        $equipo->save();
+        /* $equipo->name = $request->name;
+        $equipo->save(); */ 
+        $equipo->update($request->all());
+
         return redirect()->route('equipos.show', $equipo);
     }
 

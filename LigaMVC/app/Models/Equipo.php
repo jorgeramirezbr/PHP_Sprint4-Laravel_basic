@@ -9,5 +9,6 @@ class Equipo extends Model
 {
     use HasFactory;
     
-    
+    protected $fillable = ['name'];  //propiedades permitidas para asignacion masiva
+    protected $guarded = [];  //las propiedades que no quiero se asignen masivamente 
 }
