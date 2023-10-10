@@ -11,10 +11,10 @@
     
     <div class="flex justify-center">
         <p class="my-8">
-            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/equipos/index">Ver equipos</a>
+            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="equipos">Ver equipos</a>
         </p>
         <p class="my-8">
-            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="/partidos/index">Ver partidos</a>
+            <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="partidos">Ver partidos</a>
         </p>
     </div>
 </body>

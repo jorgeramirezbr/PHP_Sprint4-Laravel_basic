@@ -29,11 +29,11 @@ Route::middleware([
     })->name('dashboard'); 
 });
 
-Route::get('equipos/index', [EquipoController::class, 'index'])->name('equipos.index');
+Route::get('equipos', [EquipoController::class, 'index'])->name('equipos.index');
 
-Route::get('/equipos/create', [EquipoController::class, 'create'])->name('equipos.create');
+Route::get('equipos/create', [EquipoController::class, 'create'])->name('equipos.create');
 
-Route::get('/equipos/store', [EquipoController::class, 'store'])->name('equipos.store');
+Route::post('equipos', [EquipoController::class, 'store'])->name('equipos.store');
 
 Route::get('/equipos/show/{id}', [EquipoController::class, 'show'])->name('equipos.show');
 
@@ -43,7 +43,7 @@ Route::get('/equipos/update', [EquipoController::class, 'update'])->name('equipo
 
 Route::get('/equipos/destroy', [EquipoController::class, 'destroy'])->name('equipos.destroy');
 
-Route::get('/partidos/index', [PartidoController::class, 'index'])->name('partidos.index');
+Route::get('partidos', [PartidoController::class, 'index'])->name('partidos.index');
 
 Route::get('/partidos/create', [PartidoController::class, 'create'])->name('partidos.create');
 

@@ -12,7 +12,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        $equipos = Equipo::paginate();
+        $equipos = Equipo::orderBy('id','desc')->paginate();
         return view('equipos.index', compact('equipos'));
     }
 
@@ -29,7 +29,10 @@ class EquipoController extends Controller
      */
     public function store(Request $request)
     {
-        return view('equipos.store');
+        $equipo = new Equipo();
+        $equipo->name = $request->name;
+        $equipo->save();
+        return redirect()->route('equipos.show', $equipo);
     }
 
     /**
