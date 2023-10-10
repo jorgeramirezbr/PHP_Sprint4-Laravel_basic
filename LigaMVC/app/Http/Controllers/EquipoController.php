@@ -68,8 +68,9 @@ class EquipoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Equipo $equipo)
     {
-        return view('equipos.destroy');
+        $equipo->delete();
+        return redirect()->route('equipos.index');
     }
 }

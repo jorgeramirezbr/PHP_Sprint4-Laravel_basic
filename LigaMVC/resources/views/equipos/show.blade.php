@@ -7,4 +7,10 @@
     <a href="{{route('equipos.edit', $equipo)}}">Editar equipo</a>
     <h1>El equipo: {{$equipo->name}}</h1>
     <p><strong>Puntos: </strong>{{$equipo->puntos}}</p>
+
+    <form action="{{route('equipos.destroy', $equipo)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form>
 @endsection
