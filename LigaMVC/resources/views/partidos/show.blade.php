@@ -10,4 +10,9 @@
     <p><strong>Goles: </strong>{{ $partido->goles_local }}</p>
     <p><strong>Equipo Visitante: </strong>{{ $partido->equipoVisitante->name }}</p>
     <p><strong>Goles: </strong>{{ $partido->goles_visitante }}</p>
+    <form action="{{route('partidos.destroy', $partido)}}" method="post">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form>
 @endsection
