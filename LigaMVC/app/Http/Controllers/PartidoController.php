@@ -43,26 +43,31 @@ class PartidoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Partido $partido)
     {
-        $partido = Partido::find($id);
         return view('partidos.show', compact('partido'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Partido $partido)
     {
-        return view('partidos.edit');
+        $equipos = Equipo::all();
+        return view('partidos.edit', compact('partido', 'equipos'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Partido $partido)
     {
-        return view('partidos.update');
+        $partido->equipo_local = $request->equipo_local;
+        $partido->goles_local = $request->goles_local;
+        $partido->equipo_visitante = $request->equipo_visitante;
+        $partido->goles_visitante = $request->goles_visitante;
+        $partido->save();
+        return redirect()->route('partidos.show', $partido);
     }
 
     /**
