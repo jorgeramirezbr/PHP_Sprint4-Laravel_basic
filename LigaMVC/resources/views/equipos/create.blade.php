@@ -2,7 +2,7 @@
 
 @section('title', 'Equipo create')
 @section('content')
-    <h1>En esta pagina podras crear un equipo</h1>
+    <h1>Ingreso de nuevo equipo a la Liga MVC</h1>
     
     
     <form action="{{route('equipos.store')}}" method="POST">

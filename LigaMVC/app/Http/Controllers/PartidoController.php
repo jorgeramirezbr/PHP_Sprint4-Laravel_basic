@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipo;
 use App\Models\Partido;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class PartidoController extends Controller
      */
     public function create()
     {
-        return view('partidos.create');
+        $equipos = Equipo::all(); //incluimos los equipos para que puedan ser seleccionados en la vista create
+        return view('partidos.create', compact('equipos'));
     }
 
     /**
@@ -29,7 +31,13 @@ class PartidoController extends Controller
      */
     public function store(Request $request)
     {
-        return view('partidos.store');
+        $partido = new Partido();
+        $partido->equipo_local = $request->equipo_local;
+        $partido->goles_local = $request->goles_local;
+        $partido->equipo_visitante = $request->equipo_visitante;
+        $partido->goles_visitante = $request->goles_visitante;
+        $partido->save();
+        return redirect()->route('partidos.show', $partido);
     }
 
     /**
