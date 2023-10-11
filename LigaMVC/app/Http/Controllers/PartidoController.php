@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePartido;
+use App\Http\Requests\UpdatePartido;
 use App\Models\Equipo;
 use App\Models\Partido;
 use Illuminate\Http\Request;
@@ -29,7 +31,7 @@ class PartidoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePartido $request)
     {
         $partido = new Partido();
         $partido->equipo_local = $request->equipo_local;
@@ -60,7 +62,7 @@ class PartidoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Partido $partido)
+    public function update(UpdatePartido $request, Partido $partido)
     {
         $partido->equipo_local = $request->equipo_local;
         $partido->goles_local = $request->goles_local;

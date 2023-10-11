@@ -6,6 +6,7 @@
     <form action="{{route('partidos.update', $partido)}}" method="post">
         @csrf
         @method('put')
+        <br>
         <label>Equipo local: </label>
         <select name="equipo_local">
             {{-- <option value="{{ $partido->id }}">{{$partido->equipoLocal->name}}</option> --}}
@@ -14,9 +15,14 @@
             @endforeach
         </select>
         <br>
-        <label>Goles Equipo Local:</label>
-        <input type="number" name="goles_local" value="{{ $partido->goles_local }}" min="0">
+        @error('equipo_local')
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
         <br>
+        <label>Goles Equipo Local:</label>
+        <input type="number" name="goles_local" value="{{old('goles_local', $partido->goles_local)}}" min="0">
+        <br><br>
         <label>Equipo Visitante:</label>
         <select name="equipo_visitante">
             {{-- <option value="{{ $partido->id }}">{{$partido->equipoVisitante->name}}</option> --}}
@@ -25,9 +31,14 @@
             @endforeach
         </select>
         <br>
-        <label>Goles Equipo Visitante:</label>
-        <input type="number" name="goles_visitante" value="{{ $partido->goles_visitante }}" min="0">
+        @error('equipo_visitante')
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
         <br>
+        <label>Goles Equipo Visitante:</label>
+        <input type="number" name="goles_visitante" value="{{old('goles_visitante', $partido->goles_visitante)}}" min="0">
+        <br><br>
         <button type="submit">Enviar formulario</button>
     </form>
 @endsection

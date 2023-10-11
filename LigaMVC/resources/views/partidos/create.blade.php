@@ -5,6 +5,7 @@
     <h1>Registro de un nuevo partido de la Liga MVC</h1>
     <form action="{{route('partidos.store')}}" method="post">
         @csrf
+        <br>
         <label>Equipo local: </label>
         <select name="equipo_local">
             <option value="">Seleccionar un equipo</option>
@@ -13,9 +14,14 @@
             @endforeach
         </select>
         <br>
+        @error('equipo_local')
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+        <br>
         <label>Goles Equipo Local:</label>
         <input type="number" name="goles_local" value="0" min="0">
-        <br>
+        <br><br>
         <label>Equipo Visitante:</label>
         <select name="equipo_visitante">
             <option value="">Seleccionar un equipo</option>
@@ -24,9 +30,14 @@
             @endforeach
         </select>
         <br>
+        @error('equipo_visitante')
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+        <br>
         <label>Goles Equipo Visitante:</label>
         <input type="number" name="goles_visitante" value="0" min="0">
-        <br>
+        <br><br>
         <button type="submit">Enviar formulario</button>
     </form>
 @endsection
