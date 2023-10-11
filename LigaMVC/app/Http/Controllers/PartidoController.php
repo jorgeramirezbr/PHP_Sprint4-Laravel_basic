@@ -39,6 +39,8 @@ class PartidoController extends Controller
         $partido->equipo_visitante = $request->equipo_visitante;
         $partido->goles_visitante = $request->goles_visitante;
         $partido->save();
+        // $partido->equipoLocal->calcularEstadisticas();
+        // $partido->equipoVisitante->calcularEstadisticas();
         return redirect()->route('partidos.show', $partido);
     }
 
@@ -69,6 +71,8 @@ class PartidoController extends Controller
         $partido->equipo_visitante = $request->equipo_visitante;
         $partido->goles_visitante = $request->goles_visitante;
         $partido->save();
+        // $partido->equipoLocal->calcularEstadisticas();
+        // $partido->equipoVisitante->calcularEstadisticas();
         return redirect()->route('partidos.show', $partido);
     }
 
@@ -77,7 +81,11 @@ class PartidoController extends Controller
      */
     public function destroy(Partido $partido)
     {
+        // $equipoLocal = $partido->equipoLocal;
+        // $equipoVisitante = $partido->equipoVisitante;
         $partido->delete();
+        // $equipoLocal->calcularEstadisticas();
+        // $equipoVisitante->calcularEstadisticas();
         return redirect()->route('partidos.index');
     }
 }
