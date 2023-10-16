@@ -9,12 +9,16 @@ use App\Http\Requests\StoreEquipo;
 
 class EquipoController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $equipos = Equipo::orderBy('id','desc')->paginate();
+        $equipos = Equipo::orderBy('puntos','desc')->paginate();
         return view('equipos.index', compact('equipos'));
     }
 

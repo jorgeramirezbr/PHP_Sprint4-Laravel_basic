@@ -1,6 +1,11 @@
-@extends('layouts.plantilla')
+@extends('adminlte::page')
 
 @section('title', 'Equipo '. $equipo->name)
+
+@section('content_header')
+    <h1>Equipo {{$equipo->id}}</h1>
+@stop
+
 @section('content')
     <a href="{{route('equipos.index')}}">Volver a Equipos</a>
     <br>
@@ -13,4 +18,13 @@
         @method('delete')
         <button type="submit">Eliminar</button>
     </form>
-@endsection
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+@stop

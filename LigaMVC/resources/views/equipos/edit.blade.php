@@ -1,6 +1,11 @@
-@extends('layouts.plantilla')
+@extends('adminlte::page')
 
-@section('title', 'Equipo edit')
+@section('title', 'Editar equipo')
+
+@section('content_header')
+    <h1>Editar equipo</h1>
+@stop
+
 @section('content')
     <h1>En esta pagina podras editar un equipo</h1>
     
@@ -20,4 +25,13 @@
         <br>
         <button type="submit">Actualizar formulario</button>
     </form>
-@endsection
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+@stop

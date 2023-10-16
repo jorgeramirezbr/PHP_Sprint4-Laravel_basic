@@ -1,6 +1,11 @@
-@extends('layouts.plantilla')
+@extends('adminlte::page')
 
 @section('title', 'Editar partido')
+
+@section('content_header')
+    <h1>Editar partido</h1>
+@stop
+
 @section('content')
     <h1>Editar un partido de la Liga MVC</h1>
     <form action="{{route('partidos.update', $partido)}}" method="post">
@@ -41,4 +46,13 @@
         <br><br>
         <button type="submit">Enviar formulario</button>
     </form>
-@endsection
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+@stop
