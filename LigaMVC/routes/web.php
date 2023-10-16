@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EquipoController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PartidoController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,9 +25,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/home', function () {
-        return view('home');
-    })->name('home'); 
+    Route::get('/home', [HomeController::class, 'index'])->name('home'); 
 });
 
 Route::get('equipos', [EquipoController::class, 'index'])->name('equipos.index');

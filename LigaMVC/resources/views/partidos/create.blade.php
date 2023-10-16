@@ -3,11 +3,11 @@
 @section('title', 'Crear partido')
 
 @section('content_header')
-    <h1>Crear partido</h1>
+    @vite('resources/css/app.css')
+    <h1>Registro de un nuevo partido de la Liga MVC</h1>
 @stop
 
 @section('content')
-    <h1>Registro de un nuevo partido de la Liga MVC</h1>
     <form action="{{route('partidos.store')}}" method="post">
         @csrf
         <br>
@@ -43,7 +43,7 @@
         <label>Goles Equipo Visitante:</label>
         <input type="number" name="goles_visitante" value="0" min="0">
         <br><br>
-        <button type="submit">Enviar formulario</button>
+        <button class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" type="submit">Enviar formulario</button>
     </form>
 @stop
 

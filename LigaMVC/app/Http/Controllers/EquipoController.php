@@ -18,7 +18,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        $equipos = Equipo::orderBy('puntos','desc')->paginate();
+        $equipos = Equipo::orderBy('id','desc')->paginate();
         return view('equipos.index', compact('equipos'));
     }
 

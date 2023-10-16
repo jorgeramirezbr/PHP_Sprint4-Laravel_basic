@@ -3,28 +3,29 @@
 @section('title', 'Editar equipo')
 
 @section('content_header')
+    @vite('resources/css/app.css')
     <h1>Editar equipo</h1>
 @stop
 
 @section('content')
-    <h1>En esta pagina podras editar un equipo</h1>
-    
-    
-    <form action="{{route('equipos.update', $equipo)}}" method="POST">
-        @csrf
-        @method('put')
-        <label>
-            Nombre:
-            <input type="text" name="name" value="{{old('name', $equipo->name)}}">
-        </label>
-        @error('name')
+    <br>
+    <div class="container">
+        <form action="{{route('equipos.update', $equipo)}}" method="POST">
+            @csrf
+            @method('put')
+            <label class="text-blue-800">
+                Nombre:
+                <input type="text" name="name" value="{{old('name', $equipo->name)}}">
+            </label>
+            @error('name')
+                <br>
+                <small>*{{$message}}</small>
+                <br>
+            @enderror
             <br>
-            <small>*{{$message}}</small>
-            <br>
-        @enderror
-        <br>
-        <button type="submit">Actualizar formulario</button>
-    </form>
+            <button class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" type="submit">Actualizar formulario</button>
+        </form>
+    </div>
 @stop
 
 @section('css')

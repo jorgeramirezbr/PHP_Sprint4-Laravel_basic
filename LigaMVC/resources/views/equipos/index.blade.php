@@ -3,11 +3,11 @@
 @section('title', 'Indice equipos')
 
 @section('content_header')
-    <h1>Indice equipos</h1>
+    @vite('resources/css/app.css')
+    <h1>Indice de equipos de la LigaMVC</h1>
 @stop
 
 @section('content')
-    <h1>Pagina principal de Equipos</h1>
     <div class="flex justify-center">
         <p class="my-8">
             <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="{{route('home')}}">Inicio</a>
@@ -16,14 +16,16 @@
             <a class="bg-blue-700 hover:bg-pink-700 text-white font-bold px-3 py-1 rounded m-5 text-center" href="{{route('equipos.create')}}">Crear equipo</a>
         </p>
     </div>
-    <ol class="list-disc list-inside">
-        @foreach ($equipos as $equipo)
-            <li>
-                <a href="{{route('equipos.show', $equipo->id)}}">{{$equipo->name}}</a>
-                {{$equipo->puntos}} puntos
-            </li>
-        @endforeach
-    </ol>
+    <div class="container">
+        <ol class="list-disc list-inside">
+            @foreach ($equipos as $equipo)
+                <li>
+                    <a class= " text-blue-600" href="{{route('equipos.show', $equipo->id)}}">{{$equipo->name}}</a> -
+                    {{$equipo->puntos}} puntos
+                </li>
+            @endforeach
+        </ol>
+    </div>
     {{$equipos->links()}}
 @stop
 
